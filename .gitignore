@@ -1,0 +1,5 @@
+input/
+output/
+insight_testsuite/tests/test_1/input
+insight_testsuite/tests/test_1/output
+*.csv
