@@ -1,10 +1,10 @@
-from reading.handle_csv import read_csv
+from processing.process_csv import process_csv_input, process_csv_output
 
 # parse input file
-csv_dict = read_csv()
+csv_dict = process_csv_input()
 for k in csv_dict:
     print(f"Key: {k}")
     print(f"Product object: {csv_dict[k]}")
-    print("Full name: ", csv_dict[k].full_product_name)
 
 # create report file
+process_csv_output(csv_dict)

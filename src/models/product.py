@@ -21,6 +21,7 @@ class Product:
         Reported companies: {self.reported_companies}
         Number of complaints: {self.complaints}
         Companies data: {self.companies}
+        Full name: {self.full_product_name}
         """
     
     def __repr__(self):
