@@ -21,7 +21,6 @@ class Product:
         Reported companies: {self.reported_companies}
         Number of complaints: {self.complaints}
         Companies data: {self.companies}
-        Full name: {self.return_full_product_name()}
         """
     
     def __repr__(self):
@@ -32,16 +31,11 @@ class Product:
         Product.complaints<{self.complaints}>
         Product.companies<{self.companies}>
         """
-
-    def set_name_symbol(self, product_name):
-        try:
-            self.name = ProductNames.get_product_name_symbol(product_name)
-        except ProductNameDoesNotExistException("Product name doesn't exist"):
-            self.name = ""
     
-    def return_full_product_name(self):
+    @property
+    def full_product_name(self):
         try:
-            return ProductNames.return_full_product_name(self.name)
+            return ProductNames.get_full_product_name(self.name)
         except:
             return self.name
 
@@ -67,11 +61,11 @@ class ProductNames:
         return symbol
 
     @classmethod
-    def return_full_product_name(cls, product_symbol) -> str:
+    def get_full_product_name(cls, product_symbol) -> str:
         product_symbol = product_symbol.lower()
         if product_symbol not in cls.product_symbols:
             raise ProductNameDoesNotExistException("Product symbol doesn't exist")
-        return product_symbols[product_symbol]
+        return cls.product_symbols[product_symbol]
 
 class ProductNameDoesNotExistException(Exception):
     """An extended exception for handling the name look up errors"""
