@@ -24,5 +24,5 @@ def get_shortened_name_symbol(name_string: str, idx: int) -> str:
 
 def return_sorted_list_from_product_dict(prod_dict: dict) -> list:
     prod_list = [prod for prod in prod_dict.values()]
-    ordered_list = sorted(prod_list, key=operator.attrgetter("year", "name"))
+    ordered_list = sorted(prod_list, key=operator.attrgetter("name", "year"))
     return ordered_list

@@ -3,9 +3,7 @@ import operator
 
 # parse input file
 csv_dict = process_csv_input()
-# for k in csv_dict:
-#     print(f"Key: {k}")
-#     print(f"Product object: {csv_dict[k]}")
 
-# create report file
+# create and populate output file - process_csv_output returns the
+# ordered list in case it needs to be used elsewher in the future
 prod_list = process_csv_output(csv_dict)
