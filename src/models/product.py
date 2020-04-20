@@ -39,6 +39,10 @@ class Product:
             return ProductNames.get_full_product_name(self.name)
         except:
             return self.name
+    
+    @property
+    def number_of_reported_companies(self):
+        return len(self.reported_companies)
 
 class ProductNames:
     names = [

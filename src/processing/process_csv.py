@@ -5,11 +5,15 @@ from models.product import (
     ProductNames, 
     ProductNameDoesNotExistException,
 )
+from models.output_row import OutputRow
 from utils import utils
+
+input_csv_name = 'input/complaints.csv'
+output_csv_name = 'output/sample_output.csv'
 
 def process_csv_input():
     year_and_product_dict = {}
-    with open('input/complaints.csv') as csv_file:
+    with open(input_csv_name) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         for idx, row in enumerate(csv_reader):
             if idx == 0:
@@ -34,3 +38,27 @@ def process_csv_input():
             product.companies.add_company_complaint(company)
 
     return year_and_product_dict
+
+def process_csv_output(prod_dict: dict):
+    ordered_prod_list = utils.return_sorted_list_from_product_dict(prod_dict)
+    with open(output_csv_name, mode = 'w') as output_file:
+        output_writer = csv.writer(output_file, delimiter=",")
+
+        for product in ordered_prod_list:
+            name = product.full_product_name
+            year = product.year
+            total_complaints = product.complaints
+            num_of_reported_companies = product.number_of_reported_companies
+            highest_percentage = product.companies.worst_company_percentage
+
+            output_writer.writerow(
+                [
+                    name, 
+                    year, 
+                    total_complaints, 
+                    num_of_reported_companies,
+                    highest_percentage
+                ]
+            )
+        
+    return ordered_prod_list
