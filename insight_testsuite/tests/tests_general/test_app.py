@@ -104,3 +104,6 @@ class TestHandleCSV(unittest.TestCase):
         
     def test_process_csv_input_returns_the_correct_dict(self):
         pass
+
+    def test_process_csv_out_writes_to_file_correctly(self):
+        pass
