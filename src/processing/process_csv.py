@@ -8,12 +8,9 @@ from models.product import (
 from models.output_row import OutputRow
 from utils import utils
 
-input_csv_name = 'input/complaints.csv'
-output_csv_name = 'output/sample_output.csv'
-
-def process_csv_input():
+def process_csv_input(input_path):
     year_and_product_dict = {}
-    with open(input_csv_name) as csv_file:
+    with open(input_path) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         for idx, row in enumerate(csv_reader):
             if idx == 0:
@@ -39,9 +36,9 @@ def process_csv_input():
 
     return year_and_product_dict
 
-def process_csv_output(prod_dict: dict):
+def process_csv_output(output_path, prod_dict: dict):
     ordered_prod_list = utils.return_sorted_list_from_product_dict(prod_dict)
-    with open(output_csv_name, mode = 'w') as output_file:
+    with open(output_path, mode = 'w') as output_file:
         output_writer = csv.writer(output_file, delimiter=",")
 
         for product in ordered_prod_list:
