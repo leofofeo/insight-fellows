@@ -1,12 +1,12 @@
 import csv
 from datetime import datetime
-from models.product import (
-    Product, 
-    ProductNames, 
-    ProductNameDoesNotExistException,
+from src.models.product import (
+    Product,
+    ProductNames,
+    ProductNameDoesNotExistException
 )
-from models.output_row import OutputRow
-from utils import utils
+from src.models.output_row import OutputRow
+from src.utils import utils
 
 def process_csv_input(input_path):
     year_and_product_dict = {}
@@ -17,16 +17,16 @@ def process_csv_input(input_path):
                 continue
            
             year = utils.get_year(row[0], idx)
-            name_symbol = utils.get_shortened_name_symbol(row[1], idx)
-
-            product_id = str(year) + name_symbol
+            # name_symbol = utils.get_shortened_name_symbol(row[1], idx)
+            name = row[1]
+            product_id = str(year) + name
 
             # Build out or enhance a dictionary of products identified by 
             # their unique product name and year
             if product_id in year_and_product_dict:
                 product = year_and_product_dict[product_id]
             else:
-                product = Product(name_symbol, year, product_id)
+                product = Product(name, year, product_id)
                 year_and_product_dict[product.product_id] = product
 
             company = row[7]
@@ -36,13 +36,13 @@ def process_csv_input(input_path):
 
     return year_and_product_dict
 
-def process_csv_output(output_path, prod_dict: dict):
+def process_csv_output(output_path, prod_dict):
     ordered_prod_list = utils.return_sorted_list_from_product_dict(prod_dict)
     with open(output_path, mode = 'w') as output_file:
         output_writer = csv.writer(output_file, delimiter=",")
 
         for product in ordered_prod_list:
-            name = product.full_product_name
+            name = product.name
             year = product.year
             total_complaints = product.complaints
             num_of_reported_companies = product.number_of_reported_companies

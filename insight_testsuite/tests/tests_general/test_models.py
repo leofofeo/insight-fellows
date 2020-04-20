@@ -1,5 +1,4 @@
-import unittest, csv
-from src.reading import handle_csv
+import unittest
 
 class TestProductModel(unittest.TestCase):
     pass

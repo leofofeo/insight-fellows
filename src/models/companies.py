@@ -21,12 +21,10 @@ class Companies:
         complaints = [c for c in self.companies_data.values()]
         total_complaints = float(sum(complaints))
         highest_complaint = float(max(complaints))
-        # I thought I needed to return the name of the company as well; 
-        # leaving this in here in case I need it later
-        # highest_complaint = max(self.companies_data, key=self.companies_data.get)
+        # highest_complaint_company = max(self.companies_data, key=self.companies_data.get)
         try :
             percentage = (highest_complaint / total_complaints) * 100
-            return "{:.2f}".format(percentage)
+            return float("{:.2f}".format(percentage))
         except ZeroDivisionError:
             return 0.0
 

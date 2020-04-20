@@ -1,4 +1,4 @@
-from models.companies import Companies
+from src.models.companies import Companies
 
 class Product:
     """
@@ -9,7 +9,7 @@ class Product:
     """
     def __init__(self, name, year, product_id = ""):
         self.year = year
-        self.name = name
+        self.name = name.lower()
         self.product_id = str(year) + name if product_id == "" else product_id
         self.reported_companies = set()
         self.complaints = 0
@@ -23,16 +23,16 @@ class Product:
         Companies data: {self.companies}
         Full name: {self.full_product_name}
         """
-    
     def __repr__(self):
-        return f"""Product.product_id<{self.product_id}>
-        Product.name<{self.name}
+        return f"""
+        Product.product_id<{self.product_id}>
+        Product.name<{self.name}>
         Product.year<{self.year}>
         Product.reported_companies{self.reported_companies}>
         Product.complaints<{self.complaints}>
         Product.companies<{self.companies}>
         """
-    
+
     @property
     def full_product_name(self):
         try:
