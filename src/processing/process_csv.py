@@ -16,20 +16,17 @@ def process_csv_input(input_path):
                 continue
            
             year = utils.get_year(row[0], idx)
-            # name_symbol = utils.get_shortened_name_symbol(row[1], idx)
-            name = row[1]
+            name = row[1].lower()
             product_id = str(year) + name
 
-            # Build out or enhance a dictionary of products identified by 
-            # their unique product name and year
             if product_id in year_and_product_dict:
                 product = year_and_product_dict[product_id]
             else:
                 product = Product(name, year, product_id)
                 year_and_product_dict[product.product_id] = product
 
-            company = row[7]
-            product.reported_companies.add(company.lower())
+            company = row[7].lower()
+            product.reported_companies.add(company)
             product.complaints += 1
             product.companies.add_company_complaint(company)
 

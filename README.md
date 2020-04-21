@@ -8,20 +8,20 @@ exists at the root of the project; it was moved to outside of `src` to avoid con
 
 # Testing the program
 Custom tests under `tests_general` can be run one of two ways:
-- From root, run `python3.7 -m unittest discover`; ensure Python 3.7 is installed or running in your virtual env
-- From root, run `sh tests.sh`; ensure Python 3.7 is installed or running in your virtual env
+- From the project root, run `python3.7 -m unittest discover`; ensure Python 3.7 is installed or running in your virtual env
+- From the project root, run `sh tests.sh`; ensure Python 3.7 is installed or running in your virtual env
     - You might need to first run `chmod +x tests.sh` before `sh tests.sh` for permissions
 
 - Requirements: unit tests make use of a `complaints.csv` file located in the first `input` folder under `insight_testsuite/test/tests_general`
 
 # Running the script
 The script can be run in one of two ways:
-- From root, run `python3.7 main.py`; ensure Python 3.7 is installed or running in your virtual env
-- From root, run `sh run.sh`; ensure Python 3.7 is installed or running in your virtual env
+- From the project root, run `python3.7 main.py`; ensure Python 3.7 is installed or running in your virtual env
+- From the project root, run `sh run.sh`; ensure Python 3.7 is installed or running in your virtual env
     - You might need to first run `chmod +x run.sh` before `sh run.sh` for permissions
 
 - Requirements:
-    - `complaints.csv` file under the `input` folder in root
+    - `complaints.csv` file under the `input` folder at the root top level
 
 ## Models
 
@@ -55,7 +55,7 @@ The `utils` directory contains one module, `utils`, which itself contains three 
 The processing directory contains one file with two methods, `process_csv_input` and `process_csv_output`. 
 
 ### process_csv_input
-This method does the bulk of the work. It iterates over every row in the csv, and as it goes does the proper error handling with the cells that require capture. It creates and updates instantiated `Product` objects to keep track of the data coming through, and then returns a dictionary with a unique year-name combination as its key to segment products appropriately. It makes heavy use of helper functions to keep the business logic as clean as possible.
+This method does the bulk of the work. It iterates over every row in the csv, and as it does so enacts the proper error handling with the cells that require capture. It creates and updates instantiated `Product` objects to keep track of the data coming through, and then returns a dictionary with a unique year-name combination as its key to segment products appropriately. It makes heavy use of helper functions to keep the business logic as clean as possible.
 
 
 ### process_csv_output
@@ -70,6 +70,7 @@ Tests in the `test` directory test the program in a couple of ways. They're stru
 ## Miscellaneous
 
 Python = 3.7.7
+
 Standard library imports:
  - os
  - unittest
