@@ -9,15 +9,19 @@ exists at the root of the project; it was moved to outside of `src` to avoid con
 # Testing directions
 Custom tests under `tests_general` can be run one of two ways:
 - From root, run `python -m unittest discover`
-- From root, run `sh tests.sh`; ensure your `env` is running Python 3.7 or higher
-    - - You might need to first run `chmod +x tests.sh` before `sh run.sh` for permissions
+- From root, run `sh tests.sh`; ensure your `env` contains Python 3.7 or higher
+    - You might need to first run `chmod +x tests.sh` before `sh run.sh` for permissions
+
+- Requirements: unit tests make use of a `complaints.csv` file located in the first `input` folder under `insight_testsuite/test/tests_general`
 
 # Running the script
 The script can be run in one of two ways:
 - From root, run `python main.py`; ensure your virtual env is running Python 3.7 or higher
-- From root, run `sh run.sh`; ensure your `env` is running Python 3.7 or higher
+- From root, run `sh run.sh`; ensure your `env` contains Python 3.7 or higher
     - You might need to first run `chmod +x run.sh` before `sh run.sh` for permissions
 
+- Requirements:
+    - `complaints.csv` file under the `input` folder in root
 
 ## Models
 
