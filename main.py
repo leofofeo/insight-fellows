@@ -9,7 +9,7 @@ start = time.time()
 print("Processing input...")
 csv_dict = process_csv_input(input_path)
 print("Processing output...")
-prod_list = process_csv_output(output_path, csv_dict)
+_ = process_csv_output(output_path, csv_dict)
 
 end = time.time()
 print(f"Script took {end - start} seconds")
