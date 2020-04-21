@@ -1,2 +1,2 @@
 #!usr/bin/env python
-python -m unittest discover
+python3.7 -m unittest discover -v

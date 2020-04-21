@@ -16,7 +16,7 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(name, product.name)
         self.assertEqual(year, product.year)
         self.assertEqual(product_id, product.product_id)
-        self.assertEquals(3, product.complaints)
+        self.assertEqual(3, product.complaints)
 
     def test_number_of_reported_companies(self):
         name = "credit reporting, credit repair services, or other personal consumer reports"
