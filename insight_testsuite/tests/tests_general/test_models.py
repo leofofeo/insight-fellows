@@ -76,6 +76,3 @@ class TestCompaniesModel(unittest.TestCase):
         actual_percentage = self.companies.worst_company_percentage
 
         self.assertEqual(new_expected_percentage, actual_percentage)
-
-if __name__ == "__main__":
-    unittest.main()

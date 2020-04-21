@@ -1,11 +1,11 @@
 import csv
 from datetime import datetime
-from models.product import (
+from src.models.product import (
     Product,
     ProductNames,
     ProductNameDoesNotExistException
 )
-from utils import utils
+from src.utils import utils
 
 def process_csv_input(input_path):
     year_and_product_dict = {}

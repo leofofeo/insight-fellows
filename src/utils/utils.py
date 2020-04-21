@@ -1,6 +1,6 @@
 import operator
 from datetime import datetime
-from models.product import ProductNames, ProductNameDoesNotExistException
+from src.models.product import ProductNames, ProductNameDoesNotExistException
 
 def get_year(date_string: str, idx: int) -> int:
     year = ""

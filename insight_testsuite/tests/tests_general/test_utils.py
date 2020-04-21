@@ -48,8 +48,3 @@ class TestUtilityFunctions(unittest.TestCase):
         self.assertEqual(prod_list[1].year, second_product_year)
         self.assertEqual(prod_list[2].name, third_product_name)
         self.assertEqual(prod_list[2].year, third_product_year)
-
-
-
-if __name__ == "__main__":
-    unittest.main()

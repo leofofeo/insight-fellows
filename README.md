@@ -4,8 +4,20 @@
 
 The bulk of my work exists in the `src` directory. There are three main
 directories there - `models`, `processing`, and `utils`. Additionally, `main.py` 
-exists at the root of `src` and calls the two main processing functions with the 
-path to the appropriate folders. 
+exists at the root of the project; it was moved to outside of `src` to avoid conflicts with `unittest` set up and calls the two main processing functions with the path to the appropriate folders. 
+
+# Testing directions
+Custom tests under `tests_general` can be run one of two ways:
+- From root, run `python -m unittest discover`
+- From root, run `sh tests.sh`; ensure your `env` is running Python 3.7 or higher
+    - - You might need to first run `chmod +x tests.sh` before `sh run.sh` for permissions
+
+# Running the script
+The script can be run in one of two ways:
+- From root, run `python main.py`; ensure your virtual env is running Python 3.7 or higher
+- From root, run `sh run.sh`; ensure your `env` is running Python 3.7 or higher
+    - You might need to first run `chmod +x run.sh` before `sh run.sh` for permissions
+
 
 ## Models
 
@@ -49,9 +61,6 @@ This method does the bulk of the work. It iterates over every row in the csv, an
 ## Tests
 
 Tests in the `test` directory test the program in a couple of ways. They're structured to mirror the directories in `src`, and test each object and helper method's ability to do its job. Additionally, a couple of different tests test the actual input and output functionality of the program, using a variety of `assert` statements to confirm that the `process_` methods are doing what they should. In a way, these can be viewed as end-to-end tests, especially since they use the same test data as the main program.
-
-### Testing directions
-From root, run `python -m unittest discover`
 
 
 ## Miscellaneous

@@ -1,4 +1,4 @@
-from models.companies import Companies
+from src.models.companies import Companies
 
 class Product:
     """

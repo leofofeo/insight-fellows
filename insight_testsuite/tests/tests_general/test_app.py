@@ -223,7 +223,3 @@ class TestHandleCSV(unittest.TestCase):
         self.assertEqual(rows["row_3"][2], row_3_col_3)
         self.assertEqual(rows["row_3"][3], row_3_col_4)
         self.assertEqual(rows["row_3"][4], row_3_col_5)
-        
-
-if __name__ == "__main__":
-    unittest.main()
