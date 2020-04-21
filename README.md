@@ -50,5 +50,16 @@ This method does the bulk of the work. It iterates over every row in the csv, an
 
 Tests in the `test` directory test the program in a couple of ways. They're structured to mirror the directories in `src`, and test each object and helper method's ability to do its job. Additionally, a couple of different tests test the actual input and output functionality of the program, using a variety of `assert` statements to confirm that the `process_` methods are doing what they should. In a way, these can be viewed as end-to-end tests, especially since they use the same test data as the main program.
 
+### Testing directions
+From root, run `python -m unittest discover`
+
 
 ## Miscellaneous
+
+Python = 3.7.7
+Standard library imports:
+ - os
+ - unittest
+ - csv
+ - operator
+ - datetime.datetime
