@@ -12,7 +12,7 @@ Custom tests under `tests_general` can be run one of two ways:
 - From the project root, run `sh tests.sh`; ensure Python 3.7 is installed or running in your virtual env
     - You might need to first run `chmod +x tests.sh` before `sh tests.sh` for permissions
 
-- Requirements: unit tests make use of a `sample_inputs.csv` file located in the first `input` folder under `insight_testsuite/test/tests_general` (the same small file provided as a sampler)
+- Requirements: unit tests make use of a `complaints.csv` file located in the first `input` folder under `insight_testsuite/test/tests_general`, but this file should match the smaller file provided in the README with only a few rows
 
 # Running the script
 The script can be run in one of two ways:
