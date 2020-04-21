@@ -6,10 +6,10 @@ The bulk of my work exists in the `src` directory. There are three main
 directories there - `models`, `processing`, and `utils`. Additionally, `main.py` 
 exists at the root of the project; it was moved to outside of `src` to avoid conflicts with `unittest` set up and calls the two main processing functions with the path to the appropriate folders. 
 
-# Testing directions
+# Testing the program
 Custom tests under `tests_general` can be run one of two ways:
 - From root, run `python -m unittest discover`
-- From root, run `sh tests.sh`; ensure your `env` contains Python 3.7 or higher
+- From root, run `sh tests.sh`; ensure Python 3.7 is installed
     - You might need to first run `chmod +x tests.sh` before `sh run.sh` for permissions
 
 - Requirements: unit tests make use of a `complaints.csv` file located in the first `input` folder under `insight_testsuite/test/tests_general`
@@ -17,7 +17,7 @@ Custom tests under `tests_general` can be run one of two ways:
 # Running the script
 The script can be run in one of two ways:
 - From root, run `python main.py`; ensure your virtual env is running Python 3.7 or higher
-- From root, run `sh run.sh`; ensure your `env` contains Python 3.7 or higher
+- From root, run `sh run.sh`; ensure Python 3.7 is installed
     - You might need to first run `chmod +x run.sh` before `sh run.sh` for permissions
 
 - Requirements:
