@@ -69,11 +69,12 @@ Tests in the `test` directory test the program in a couple of ways. They're stru
 
 ## Miscellaneous
 
-Python = 3.7.7
+Python
+- 3.7.7
 
 Standard library imports:
- - os
- - unittest
- - csv
- - operator
- - datetime.datetime
+- os
+- unittest
+- csv
+- operator
+- datetime.datetime
