@@ -6,4 +6,4 @@ insight_testsuite/tests/test_1/output
 *.pyc
 __pycache__/
 .vscode/
-.DStore
+.DS_Store
