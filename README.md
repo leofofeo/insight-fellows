@@ -33,7 +33,7 @@ the structure of the data throughout the parsing and processing. The most notabl
 
 ### ProductNames
 `ProductNames` is a helper class primarily meant to keep track of acceptable
-`Product` names. I made the decision early on to truncuate a product's name for readability throughout the parsing. After running the test file, I realized
+`Product` names. I made the decision early on to truncate a product's name for readability throughout the parsing. After running the test file, I realized
 that `ProductNames` would only be useful if I knew the product names beforehand. I reasoned that a quick test of the data using R or a helper library to test the data beforehand would give me all of the fields I needed, but 
 I decided to remove the use of this process for the sake of resilience. Requiring a known product name to exist in the list of accetable `ProductNames`
 coupled the parsing with `Product` too tightly, and wouldn't allow for the script to run with newly added products to the csv without also modifying the script. As such, `ProductNames` isn't really in use, but has been left in the program as a potential option for more rigorous acceptable data in the future.
